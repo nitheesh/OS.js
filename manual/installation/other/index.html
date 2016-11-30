@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Alternate OS.js installations | OS.js Manual</title>
+    <meta name="description" content="OS.js Manual - OS.js" />
+    <meta name="keywords" content="OS.js,Documentation,Client,Server,API,Tutorial,Tutorials,Manual,Manuals" />
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism-tomorrow.min.css">
+    <link href="/css/manual.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/favicon.png" />
+    <link rel="author" href="https://plus.google.com/101576798387217383063" />
+    <link rel="publisher" href="https://plus.google.com/101576798387217383063" />
+
+    <script type="text/javascript">
+      if ( window.location.hostname === 'andersevenrud.github.io' ) {
+        window.location = '//os.js.org' + window.location.pathname.replace(/\/OS\.js-v2/, '');
+      }
+      if ( window.location.hostname === 'os.js.org' && window.location.protocol !== 'https:' ) {
+        window.location.protocol = 'https:';
+      }
+    </script>
+  </head>
+  <body class="manual_installation_other">
+    <header>
+      <div id="Logo"></div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/manual" class="active">Manual</a>
+        <a href="/doc" >Documentation</a>
+      </nav>
+    </header>
+
+    <main>
+      <aside id="sidebar">
+        <nav>
+          <ol>
+            <li>
+              <a href="/manual">Overview</a>
+            </li>
+
+            <li>
+              <a href="/manual/installation">Installation</a>
+              <ul>
+                <li><a href="/manual/installation/nix">NIX</a></li>
+                <li><a href="/manual/installation/windows">Windows</a></li>
+                <li><a href="/manual/installation/other">Other</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/build">Build System</a>
+              <ul>
+                <li><a href="/manual/build/cli">Commands</a></li>
+                <li><a href="/manual/build/grunt">Grunt</a></li>
+                <li><a href="/manual/build/customization">Customization</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/configuration">Configuration</a>
+              <ul>
+                <li><a href="/manual/configuration/#environment">Environment</a></li>
+                <li><a href="/manual/configuration/#settings">Settings</a></li>
+                <li><a href="/manual/configuration/#assets">Assets</a></li>
+                <li><a href="/manual/configuration/#packages">Packages</a></li>
+                <li><a href="/manual/configuration/#proxies">Proxies</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/client">Client</a>
+              <ul>
+                <li><a href="/manual/client/features">Features</a></li>
+                <li><a href="/manual/client/broadway">Broadway</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/server">Server</a>
+              <ul>
+                <li><a href="/manual/server/node">Node</a></li>
+                <li><a href="/manual/server/php">PHP</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/auth">Authentication</a>
+              <ul>
+                <li><a href="/manual/auth/modules">Modules</a></li>
+                <li><a href="/manual/auth/permission">Groups and permissions</a></li>
+                <li><a href="/manual/auth/example">Module Examples</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/storage">Storage</a>
+              <ul>
+                <li><a href="/manual/storage/modules">Modules</a></li>
+                <li><a href="/manual/storage/example">Module Examples</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/connection">Connection</a>
+              <ul>
+                <li><a href="/manual/connection/websocket">WebSocket</a></li>
+                <li><a href="/manual/connection/http">HTTP/HTTP2/HTTPS</a></li>
+                <li><a href="/manual/connection/example">Module Examples</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/api">API</a>
+              <ul>
+                <li><a href="/manual/api/client">Client</a></li>
+                <li><a href="/manual/api/server">Server</a></li>
+                <li>
+                  <span>Usage</span>
+                  <ul>
+                    <li><a href="/manual/api/usage/curl">curl</a></li>
+                    <li><a href="/manual/api/usage/vfs">VFS</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/vfs">VFS</a>
+              <ul>
+                <li><a href="/manual/vfs/#mountpoints">Mountpoints</a></li>
+                <li>
+                  <a href="/manual/vfs/transport">Transports</a>
+                  <ul>
+                    <li><a href="/manual/vfs/transport/#googledrive">Google Drive</a></li>
+                    <li><a href="/manual/vfs/transport/#microsoft-onedrive">Microsoft OneDrive</a></li>
+                    <li><a href="/manual/vfs/transport/#dropbox">Dropbox</a></li>
+                    <li><a href="/manual/vfs/transport/#webdav">WebDAV</a></li>
+                  </ul>
+                </li>
+                <li><a href="/manual/vfs/example">Module Examples</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/package">Package</a>
+              <ul>
+                <li><a href="/manual/package/#metadata">Metadata</a></li>
+                <li><a href="/manual/package/#preload">Preload</a></li>
+                <li><a href="/manual/package/#scripts">Scripts</a></li>
+                <li><a href="/manual/package/#spawner">Spawner</a></li>
+                <li><a href="/manual/package/#less-support">LESS Support</a></li>
+                <li><a href="/manual/package/#server-apis">Server APIs</a></li>
+                <li>
+                  <span>Types</span>
+                  <ul>
+                    <li>
+                      <a href="/manual/package/application">Application</a>
+                      <ul>
+                        <li><a href="/manual/package/application/events">Events</a></li>
+                        <li><a href="/manual/package/application/windows">Windows</a></li>
+                        <li><a href="/manual/package/application/gui">GUI</a></li>
+                        <li><a href="/manual/package/application/responsive">Responsive</a></li>
+                        <li><a href="/manual/package/application/misc">Misc</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="/manual/package/iframe">Iframe</a></li>
+                    <li><a href="/manual/package/service">Service</a></li>
+                    <li><a href="/manual/package/extension">Extension</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/gui">Scheme and GUI</a>
+              <ul>
+                <li><a href="/manual/gui/scheme">Scheme files</a></li>
+                <li>
+                  <a href="/manual/gui/elements">GUI Elements</a>
+                  <ul>
+                    <li><a href="/manual/gui/elements/library">Element library</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/corewm">CoreWM</a>
+              <ul>
+                <li><a href="/manual/corewm/#themes">Themes</a></li>
+                <li><a href="/manual/corewm/#panel">Panel</a></li>
+                <li><a href="/manual/corewm/#widget">Widget</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/development">Development</a>
+              <ul>
+                <li><a href="/manual/development/#style-guide">Style guide</a></li>
+                <li><a href="/manual/development/#set-up-environment">Set up environment</a></li>
+                <li><a href="/manual/development/#tips-and-tricks">Tips and tricks</a></li>
+                <li><a href="/manual/development/#testing">Testing</a></li>
+                <li><a href="/manual/development/#contributing">Contributing</a></li>
+              </ul>
+            </li>
+
+            <li><a href="/manual/community">Community</a></li>
+          </ol>
+
+        </nav>
+      </aside>
+
+      <content>
+        <h1 id="containers">Containers</h1>
+<h2 id="vagrant">Vagrant</h2>
+<p>Simply start the virtual machine and then follow normal instructions:</p>
+<pre class="language-bash"><code class="language-bash">$ vagrant up
+$ vagrant <span class="token function">ssh</span>
+</code></pre>
+<p>The <code>Vagrantfile</code> is included.</p>
+<hr>
+<h2 id="docker">Docker</h2>
+<p>Use the included <code>Dockerfile</code> or make your own image with <code>./bin/build-docker-image.sh</code>.</p>
+<hr>
+<h1 id="boards">Boards</h1>
+<h2 id="arduino">Arduino</h2>
+<p>Arduino has a custom build known as <a href="https://github.com/arduino-org/Arduino-OS">Arduino-OS</a>. This is a fork running on <code>Lua</code>.</p>
+<p>It is available for <strong>TIAN</strong> and <strong>Due</strong> (preloaded).</p>
+<hr>
+<h2 id="raspberrypi">RaspberryPI</h2>
+<p>Just follow the normal NIX instructions.</p>
+<p><strong>NOTE</strong> Installing on vfat sdcards is causing some problems with npm packages. Any other linux-based filesystem seems to work just fine.</p>
+<hr>
+<h2 id="intel-edison">Intel Edison</h2>
+<h3 id="manual">Manual</h3>
+<p>Follow normal instructions and use the Shadow authentication and System storage modules.</p>
+<pre class="language-bash"><code class="language-bash">$ edit <span class="token function">vi</span> /etc/opkg/base-feeds.conf
+
+  src all http://iotdk.intel.com/repos/2.0/iotdk/all
+  src x86 http://iotdk.intel.com/repos/2.0/iotdk/x86
+  src i586 http://iotdk.intel.com/repos/2.0/iotdk/i586
+
+$ opkg update
+$ opkg <span class="token function">install</span> <span class="token function">git</span>
+
+$ ./bin/build-opkg.sh osjs 2.0.0-VERSION all intel-edison
+$ ./bin/build-opkg.sh osjs 2.0.0-VERSION x86 intel-edison
+$ ./bin/build-opkg.sh osjs 2.0.0-VERSION i586 intel-edison
+
+$ opkg <span class="token function">install</span> <span class="token operator">&lt;</span>package-name<span class="token operator">&gt;</span>
+</code></pre>
+<p><strong>NOTE</strong> Installing on vfat sdcards is causing some problems with npm packages. Any other linux-based filesystem seems to work just fine.</p>
+<h3 id="prebuilt-images">Prebuilt images</h3>
+<p><em>Please note that these are not built on a regular basis, and most likely outdated</em></p>
+<pre class="language-bash"><code class="language-bash">$ edit <span class="token function">vi</span> /etc/opkg/base-feeds.conf
+
+  src all https://builds.os.js.org/opkg/edison/all
+  src x86 https://builds.os.js.org/opkg/edison/x86
+  src i586 https://builds.os.js.org/opkg/edison/i586
+
+$ opkg update
+$ opkg <span class="token function">install</span> osjs
+</code></pre>
+<h3 id="launch">Launch</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> /home/demo
+/osjs/bin/start-edison.sh
+</code></pre>
+<hr>
+<h2 id="other">Other</h2>
+<p>Same as RaspberryPI. Any device capable of running either Node or PHP should work just fine.</p>
+<hr>
+<h1 id="misc">Misc</h1>
+<h2 id="nw">NW</h2>
+<p>This is experimental. See the <a href="https://github.com/os-js/OS.js/blob/master/doc/NW.md">repository documentation</a> for more information.</p>
+<hr>
+<h2 id="x11">X11</h2>
+<p>This is very experimental. See the <a href="https://github.com/os-js/OS.js/blob/master/doc/X11.md">repository documentation</a> for more information.</p>
+
+
+        <footer>
+          <div class="adddshere">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- https://os.js.org (RESPONSIVE) -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6145716264521226"
+                 data-ad-slot="9888011596"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+
+          <p>OS.js &copy; Anders Evenrud 2011-2016</p>
+          <p>Hosting by Github</p>
+          <p>Generated with Metalsmith</p>
+        </footer>
+      </content>
+    </main>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46087265-1', 'auto');
+      ga('require', 'linkid');
+      ga('send', 'pageview');
+    </script>
+
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'os-js/OS.js'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+  </body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Authentication Modules | OS.js Manual</title>
+    <meta name="description" content="OS.js Manual - OS.js" />
+    <meta name="keywords" content="OS.js,Documentation,Client,Server,API,Tutorial,Tutorials,Manual,Manuals" />
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism-tomorrow.min.css">
+    <link href="/css/manual.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/favicon.png" />
+    <link rel="author" href="https://plus.google.com/101576798387217383063" />
+    <link rel="publisher" href="https://plus.google.com/101576798387217383063" />
+
+    <script type="text/javascript">
+      if ( window.location.hostname === 'andersevenrud.github.io' ) {
+        window.location = '//os.js.org' + window.location.pathname.replace(/\/OS\.js-v2/, '');
+      }
+      if ( window.location.hostname === 'os.js.org' && window.location.protocol !== 'https:' ) {
+        window.location.protocol = 'https:';
+      }
+    </script>
+  </head>
+  <body class="manual_auth_modules">
+    <header>
+      <div id="Logo"></div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/manual" class="active">Manual</a>
+        <a href="/doc" >Documentation</a>
+      </nav>
+    </header>
+
+    <main>
+      <aside id="sidebar">
+        <nav>
+          <ol>
+            <li>
+              <a href="/manual">Overview</a>
+            </li>
+
+            <li>
+              <a href="/manual/installation">Installation</a>
+              <ul>
+                <li><a href="/manual/installation/nix">NIX</a></li>
+                <li><a href="/manual/installation/windows">Windows</a></li>
+                <li><a href="/manual/installation/other">Other</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/build">Build System</a>
+              <ul>
+                <li><a href="/manual/build/cli">Commands</a></li>
+                <li><a href="/manual/build/grunt">Grunt</a></li>
+                <li><a href="/manual/build/customization">Customization</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/configuration">Configuration</a>
+              <ul>
+                <li><a href="/manual/configuration/#environment">Environment</a></li>
+                <li><a href="/manual/configuration/#settings">Settings</a></li>
+                <li><a href="/manual/configuration/#assets">Assets</a></li>
+                <li><a href="/manual/configuration/#packages">Packages</a></li>
+                <li><a href="/manual/configuration/#proxies">Proxies</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/client">Client</a>
+              <ul>
+                <li><a href="/manual/client/features">Features</a></li>
+                <li><a href="/manual/client/broadway">Broadway</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/server">Server</a>
+              <ul>
+                <li><a href="/manual/server/node">Node</a></li>
+                <li><a href="/manual/server/php">PHP</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/auth">Authentication</a>
+              <ul>
+                <li><a href="/manual/auth/modules">Modules</a></li>
+                <li><a href="/manual/auth/permission">Groups and permissions</a></li>
+                <li><a href="/manual/auth/example">Module Examples</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/storage">Storage</a>
+              <ul>
+                <li><a href="/manual/storage/modules">Modules</a></li>
+                <li><a href="/manual/storage/example">Module Examples</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/connection">Connection</a>
+              <ul>
+                <li><a href="/manual/connection/websocket">WebSocket</a></li>
+                <li><a href="/manual/connection/http">HTTP/HTTP2/HTTPS</a></li>
+                <li><a href="/manual/connection/example">Module Examples</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/api">API</a>
+              <ul>
+                <li><a href="/manual/api/client">Client</a></li>
+                <li><a href="/manual/api/server">Server</a></li>
+                <li>
+                  <span>Usage</span>
+                  <ul>
+                    <li><a href="/manual/api/usage/curl">curl</a></li>
+                    <li><a href="/manual/api/usage/vfs">VFS</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/vfs">VFS</a>
+              <ul>
+                <li><a href="/manual/vfs/#mountpoints">Mountpoints</a></li>
+                <li>
+                  <a href="/manual/vfs/transport">Transports</a>
+                  <ul>
+                    <li><a href="/manual/vfs/transport/#googledrive">Google Drive</a></li>
+                    <li><a href="/manual/vfs/transport/#microsoft-onedrive">Microsoft OneDrive</a></li>
+                    <li><a href="/manual/vfs/transport/#dropbox">Dropbox</a></li>
+                    <li><a href="/manual/vfs/transport/#webdav">WebDAV</a></li>
+                  </ul>
+                </li>
+                <li><a href="/manual/vfs/example">Module Examples</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/package">Package</a>
+              <ul>
+                <li><a href="/manual/package/#metadata">Metadata</a></li>
+                <li><a href="/manual/package/#preload">Preload</a></li>
+                <li><a href="/manual/package/#scripts">Scripts</a></li>
+                <li><a href="/manual/package/#spawner">Spawner</a></li>
+                <li><a href="/manual/package/#less-support">LESS Support</a></li>
+                <li><a href="/manual/package/#server-apis">Server APIs</a></li>
+                <li>
+                  <span>Types</span>
+                  <ul>
+                    <li>
+                      <a href="/manual/package/application">Application</a>
+                      <ul>
+                        <li><a href="/manual/package/application/events">Events</a></li>
+                        <li><a href="/manual/package/application/windows">Windows</a></li>
+                        <li><a href="/manual/package/application/gui">GUI</a></li>
+                        <li><a href="/manual/package/application/responsive">Responsive</a></li>
+                        <li><a href="/manual/package/application/misc">Misc</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="/manual/package/iframe">Iframe</a></li>
+                    <li><a href="/manual/package/service">Service</a></li>
+                    <li><a href="/manual/package/extension">Extension</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/gui">Scheme and GUI</a>
+              <ul>
+                <li><a href="/manual/gui/scheme">Scheme files</a></li>
+                <li>
+                  <a href="/manual/gui/elements">GUI Elements</a>
+                  <ul>
+                    <li><a href="/manual/gui/elements/library">Element library</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/corewm">CoreWM</a>
+              <ul>
+                <li><a href="/manual/corewm/#themes">Themes</a></li>
+                <li><a href="/manual/corewm/#panel">Panel</a></li>
+                <li><a href="/manual/corewm/#widget">Widget</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="/manual/development">Development</a>
+              <ul>
+                <li><a href="/manual/development/#style-guide">Style guide</a></li>
+                <li><a href="/manual/development/#set-up-environment">Set up environment</a></li>
+                <li><a href="/manual/development/#tips-and-tricks">Tips and tricks</a></li>
+                <li><a href="/manual/development/#testing">Testing</a></li>
+                <li><a href="/manual/development/#contributing">Contributing</a></li>
+              </ul>
+            </li>
+
+            <li><a href="/manual/community">Community</a></li>
+          </ol>
+
+        </nav>
+      </aside>
+
+      <content>
+        <h1 id="authentication-modules">Authentication Modules</h1>
+<p>You can change the login behaviour of OS.js by changing the configuration to a module that is included. You can also, of course; make your own!</p>
+<h2 id="demo">Demo</h2>
+<p>For demonstration purposes. Does not do any actual athentication and has no restrictions.</p>
+<p><em>Please note that this module has no support for user management.</em></p>
+<hr>
+<h2 id="mysql">Mysql</h2>
+<p>This is just a simple database backend that authorizes login attempts via mysql.</p>
+<p><strong>Also set up the <a href="/manual/storage/modules/#mysql">Mysql storage</a> module for this to work as intended.</strong></p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Install node dependency</span>
+$ npm <span class="token function">install</span> mysql bcryptjs
+
+<span class="token comment" spellcheck="true"># Change the configured authenticator and its options</span>
+$ node osjs config:set --name<span class="token operator">=</span>authenticator --value<span class="token operator">=</span>mysql
+$ node osjs config:set --name<span class="token operator">=</span>server.modules.auth.mysql.host --value<span class="token operator">=</span>localhost
+$ node osjs config:set --name<span class="token operator">=</span>server.modules.auth.mysql.user --value<span class="token operator">=</span>osjsuser
+$ node osjs config:set --name<span class="token operator">=</span>server.modules.auth.mysql.password --value<span class="token operator">=</span>osjspassword
+$ node osjs config:set --name<span class="token operator">=</span>server.modules.auth.mysql.database --value<span class="token operator">=</span>osjs
+
+<span class="token comment" spellcheck="true"># Make OS.js reload after you log out</span>
+$ node osjs config:set --name<span class="token operator">=</span>client.ReloadOnShutdown --value<span class="token operator">=</span>true
+
+<span class="token comment" spellcheck="true"># Rebuild</span>
+$ node osjs build:config build:core
+
+<span class="token comment" spellcheck="true"># Set up database</span>
+$ mysql -u root -p
+
+mysql<span class="token operator">&gt;</span> CREATE DATABASE osjs<span class="token punctuation">;</span>
+mysql<span class="token operator">&gt;</span> GRANT USAGE ON *.* TO osjsuser@localhost IDENTIFIED BY <span class="token string">&apos;osjspassword&apos;</span><span class="token punctuation">;</span>
+mysql<span class="token operator">&gt;</span> GRANT ALL PRIVILEGES ON osjs.* TO osjsuser@localhost<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true"># Then set up database tables</span>
+mysql<span class="token operator">&gt;</span> CREATE TABLE IF NOT EXISTS <span class="token variable"><span class="token variable">`</span><span class="token function">users</span><span class="token variable">`</span></span> <span class="token punctuation">(</span>
+  <span class="token variable"><span class="token variable">`</span><span class="token function">id</span><span class="token variable">`</span></span> int<span class="token punctuation">(</span>11<span class="token punctuation">)</span> NOT NULL AUTO_INCREMENT,
+  <span class="token variable"><span class="token variable">`</span>username<span class="token variable">`</span></span> varchar<span class="token punctuation">(</span>255<span class="token punctuation">)</span> NOT NULL,
+  <span class="token variable"><span class="token variable">`</span>password<span class="token variable">`</span></span> varchar<span class="token punctuation">(</span>255<span class="token punctuation">)</span> NOT NULL,
+  <span class="token variable"><span class="token variable">`</span>name<span class="token variable">`</span></span> varchar<span class="token punctuation">(</span>255<span class="token punctuation">)</span> NOT NULL,
+  <span class="token variable"><span class="token variable">`</span><span class="token function">groups</span><span class="token variable">`</span></span> text,
+  <span class="token variable"><span class="token variable">`</span>settings<span class="token variable">`</span></span> text,
+  PRIMARY KEY <span class="token punctuation">(</span><span class="token variable"><span class="token variable">`</span><span class="token function">id</span><span class="token variable">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span> ENGINE<span class="token operator">=</span>MyISAM  DEFAULT CHARSET<span class="token operator">=</span>latin1 AUTO_INCREMENT<span class="token operator">=</span>1<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true"># And then add yourself a user</span>
+$ node bin/mysql-user.js add anders admin
+$ <span class="token function">mkdir</span> vfs/home/myadminaccount
+</code></pre>
+<hr>
+<h2 id="pam-and-shadow">PAM and Shadow</h2>
+<p>Log in via the system (<code>PAM</code> or <code>Shadow</code>) authentication system. <strong>This is only available for Linux and Node</strong>.</p>
+<p><strong>Also set up the <a href="/manual/storage/modules/#system">System storage</a> module for this to work as intended.</strong></p>
+<h3 id="setup-">Setup:</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># You need the PAM developer package to build node gyp module</span>
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> libpam0g-dev
+
+<span class="token comment" spellcheck="true"># PAM dependencies (you need PAM development package on your system)</span>
+$ npm <span class="token function">install</span> nan@1.1.0
+$ npm <span class="token function">install</span> authenticate-pam
+$ npm <span class="token function">install</span> userid
+
+<span class="token comment" spellcheck="true"># Shadow dependencies</span>
+$ npm <span class="token function">install</span> git+https://github.com/andersevenrud/passwd-linux
+$ npm <span class="token function">install</span> userid
+
+<span class="token comment" spellcheck="true"># Set up groups</span>
+$ <span class="token function">mkdir</span> /etc/osjs
+$ edit /etc/osjs/groups.json
+
+<span class="token comment" spellcheck="true"># Set up package blacklist (optional)</span>
+$ edit /etc/osjs/blacklist.json
+
+<span class="token comment" spellcheck="true"># Change the configured authenticator (or use &quot;shadow&quot; here)</span>
+$ node osjs config:set --name<span class="token operator">=</span>authenticator --value<span class="token operator">=</span>pam
+
+<span class="token comment" spellcheck="true"># Make OS.js reload after you log out</span>
+$ node osjs config:set --name<span class="token operator">=</span>client.ReloadOnShutdown --value<span class="token operator">=</span>true
+
+<span class="token comment" spellcheck="true"># Update configuration and template files</span>
+$ node osjs build:config build:core
+</code></pre>
+<p><strong>NOTE:</strong> On some systems you might have to install <code>authenticate-pam</code> with <code>npm install -g</code> or else you might get a <em>Error in service module</em> upon request.</p>
+<p><strong>NOTE:</strong> Also, on some systems you might have to run OS.js server as an administrator (<code>sudo</code>) depending on the PAM setup.</p>
+<p><strong>NOTE:</strong> This module has no support for user management at the moment. You&apos;ll have to use the system tools.*</p>
+
+
+        <footer>
+          <div class="adddshere">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- https://os.js.org (RESPONSIVE) -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6145716264521226"
+                 data-ad-slot="9888011596"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+
+          <p>OS.js &copy; Anders Evenrud 2011-2016</p>
+          <p>Hosting by Github</p>
+          <p>Generated with Metalsmith</p>
+        </footer>
+      </content>
+    </main>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46087265-1', 'auto');
+      ga('require', 'linkid');
+      ga('send', 'pageview');
+    </script>
+
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'os-js/OS.js'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+  </body>
+</html>
