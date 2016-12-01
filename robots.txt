@@ -1,5 +1,6 @@
 User-agent: *
 Disallow: test
+Disallow: manual
 Disallow: windows-installer.cmd
 Disallow: windows-installer.ps1
 Disallow: installer.exe
@@ -117,6 +118,8 @@ Disallow: /doc/client/srcclientjavascriptvfs_filejs.html
 Disallow: /doc/client/srcjavascriptguiscrollviewjs.html
 Disallow: /doc/client/srcclientjavascriptguitextjs.html
 Disallow: /doc/client/srcclientjavascripthelpersfirefox-marketplacejs.html
+Disallow: /doc/client/srcjavascripthelpersfirefox-marketplacejs.html
+Disallow: /doc/client/srcjavascriptsessionjs.html
 Disallow: /doc/client/srcclientjavascriptvfsuserjs.html
 Disallow: /doc/client/srcclientjavascriptguimiscjs.html
 Disallow: /doc/client/srcclientjavascripthandlerjs.html
@@ -170,6 +173,8 @@ Disallow: /doc/client/srcclientjavascriptdialogsfileinfojs.html
 Disallow: /doc/client/srcclientjavascriptvfsmountslocalstoragejs.html
 Disallow: /doc/client/srcclientjavascriptvfsmountsdropboxjs.html
 Disallow: /doc/client/srcclientjavascripthelpersiframe-applicationjs.html
+Disallow: /doc/client/srcjavascriptvfsjs.html
+Disallow: /doc/client/OSjs.Dialogs.html
 Disallow: /doc/client/OSjs.Handlers.html
 Disallow: /doc/manuals/index.html
 Disallow: /doc/manuals/man-configuration.html
