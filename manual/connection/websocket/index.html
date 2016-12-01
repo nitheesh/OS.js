@@ -223,6 +223,30 @@
 $ node osjs build:config
 </code></pre>
 <p><em>Note that static resources and file read/write operations are still performed over HTTP.</em></p>
+<h2 id="broadcasting-and-subscriptions">Broadcasting and Subscriptions</h2>
+<p>You can broadcast messages from the server to a client. Example:</p>
+<pre class="language-js"><code class="language-js"><span class="token comment" spellcheck="true">// Server</span>
+<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span>env<span class="token punctuation">.</span>NODEDIR <span class="token operator">+</span> <span class="token string">&apos;/http.js&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+http<span class="token punctuation">.</span><span class="token function">broadcastMessage</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">&apos;mynamespace&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// To everyone</span>
+  something<span class="token punctuation">:</span> <span class="token string">&apos;value&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+http<span class="token punctuation">.</span><span class="token function">broadcastMessage</span><span class="token punctuation">(</span><span class="token string">&apos;anders&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;mynamespace&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// To a spesific user only</span>
+  something<span class="token punctuation">:</span> <span class="token string">&apos;value&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Client</span>
+<span class="token keyword">var</span> conn <span class="token operator">=</span> OSjs<span class="token punctuation">.</span>Core<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+conn<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">&apos;mynamespace&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>something<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// =&gt; &apos;value&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>To send a raw message on your socket you can do:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> conn <span class="token operator">=</span> OSjs<span class="token punctuation">.</span>Core<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+conn<span class="token punctuation">.</span>ws<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  foo<span class="token punctuation">:</span> <span class="token string">&apos;bar&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 
 
         <footer>
