@@ -30,6 +30,10 @@
     <header>
       <div id="Logo"></div>
       <nav>
+        <form method="get" action="https://www.google.com/search" id="Search">
+          <input type="text" name="q" id="SearchQuery" placeholder="Search with Google" />
+        </form>
+
         <a href="/">Home</a>
         <a href="/manual" class="active">Manual</a>
         <a href="/doc" >Documentation</a>
@@ -226,8 +230,12 @@
 <h2 id="mysql">Mysql</h2>
 <p>This is just a simple database backend that authorizes login attempts via mysql.</p>
 <p><strong>Also set up the <a href="/manual/storage/modules/#mysql">Mysql storage</a> module for this to work as intended.</strong></p>
-<pre class="language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Install node dependency</span>
+<pre class="language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Install node dependencies</span>
 $ npm <span class="token function">install</span> mysql bcryptjs
+
+<span class="token comment" spellcheck="true"># Or if you use PHP, install Composer, then run:</span>
+$ <span class="token function">cd</span> src/server/php
+$ composer <span class="token function">install</span>
 
 <span class="token comment" spellcheck="true"># Change the configured authenticator and its options</span>
 $ node osjs config:set --name<span class="token operator">=</span>authenticator --value<span class="token operator">=</span>mysql
@@ -340,6 +348,18 @@ $ node osjs build:config build:core
       };
     </script>
     <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+    <script>
+document.getElementById('Search').onsubmit = function(ev) {
+  ev.preventDefault();
+
+  var v = document.getElementById('SearchQuery').value;
+  var q = 'site:os.js.org ' + encodeURIComponent(String(v));
+  window.location = 'https://google.com/search?q=' + q;
+
+  return false;
+};
+    </script>
 
   </body>
 </html>
