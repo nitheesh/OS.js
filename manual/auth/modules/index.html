@@ -271,22 +271,14 @@ $ node osjs config:set --name<span class="token operator">=</span>client.ReloadO
 $ node osjs build:config build:core
 
 <span class="token comment" spellcheck="true"># Set up database</span>
-$ mysql -u root -p
+$ mysql -h localhost -u root -p
 
 mysql<span class="token operator">&gt;</span> CREATE DATABASE osjs<span class="token punctuation">;</span>
 mysql<span class="token operator">&gt;</span> GRANT USAGE ON *.* TO osjsuser@localhost IDENTIFIED BY <span class="token string">&apos;osjspassword&apos;</span><span class="token punctuation">;</span>
 mysql<span class="token operator">&gt;</span> GRANT ALL PRIVILEGES ON osjs.* TO osjsuser@localhost<span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true"># Then set up database tables</span>
-mysql<span class="token operator">&gt;</span> CREATE TABLE IF NOT EXISTS <span class="token variable"><span class="token variable">`</span><span class="token function">users</span><span class="token variable">`</span></span> <span class="token punctuation">(</span>
-  <span class="token variable"><span class="token variable">`</span><span class="token function">id</span><span class="token variable">`</span></span> int<span class="token punctuation">(</span>11<span class="token punctuation">)</span> NOT NULL AUTO_INCREMENT,
-  <span class="token variable"><span class="token variable">`</span>username<span class="token variable">`</span></span> varchar<span class="token punctuation">(</span>255<span class="token punctuation">)</span> NOT NULL,
-  <span class="token variable"><span class="token variable">`</span>password<span class="token variable">`</span></span> varchar<span class="token punctuation">(</span>255<span class="token punctuation">)</span> NOT NULL,
-  <span class="token variable"><span class="token variable">`</span>name<span class="token variable">`</span></span> varchar<span class="token punctuation">(</span>255<span class="token punctuation">)</span> NOT NULL,
-  <span class="token variable"><span class="token variable">`</span><span class="token function">groups</span><span class="token variable">`</span></span> text,
-  <span class="token variable"><span class="token variable">`</span>settings<span class="token variable">`</span></span> text,
-  PRIMARY KEY <span class="token punctuation">(</span><span class="token variable"><span class="token variable">`</span><span class="token function">id</span><span class="token variable">`</span></span><span class="token punctuation">)</span>
-<span class="token punctuation">)</span> ENGINE<span class="token operator">=</span>MyISAM  DEFAULT CHARSET<span class="token operator">=</span>latin1 AUTO_INCREMENT<span class="token operator">=</span>1<span class="token punctuation">;</span>
+$ mysql -h localhost -u root -p osjs <span class="token operator">&lt;</span> src/templates/misc/authstorage.sql
 
 <span class="token comment" spellcheck="true"># And then add yourself a user</span>
 $ node bin/add-user.js add anders admin

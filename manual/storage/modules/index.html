@@ -230,14 +230,12 @@ $ node osjs build:config build:core
 </code></pre>
 <hr>
 <h2 id="database">Database</h2>
-<p>Stores the data in a database. See the <a href="/manual/auth">Authenticators</a> documentation on how to set up the database and its users.</p>
+<p>Stores user data in a database.</p>
+<p><strong>See the <a href="/manual/auth">Authenticators</a> documentation on how to set up the database and its users.</strong></p>
 <h3 id="sqlite">Sqlite</h3>
 <pre class="language-bash"><code class="language-bash">$ node osjs config:set --name<span class="token operator">=</span>storage --value<span class="token operator">=</span>database
 $ node osjs config:set --name<span class="token operator">=</span>server.modules.storage.database.driver --value<span class="token operator">=</span>sqlite
 $ node osjs build:config build:core
-
-<span class="token comment" spellcheck="true"># If you have not done it already</span>
-$ <span class="token function">cp</span> src/templates/misc/authstorage.sqlite src/server/
 </code></pre>
 <h3 id="mysql">Mysql</h3>
 <pre class="language-bash"><code class="language-bash">$ node osjs config:set --name<span class="token operator">=</span>storage --value<span class="token operator">=</span>database
