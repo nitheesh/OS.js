@@ -227,22 +227,42 @@
 <p>For demonstration purposes. Does not do any actual athentication and has no restrictions.</p>
 <p><em>Please note that this module has no support for user management.</em></p>
 <hr>
-<h2 id="mysql">Mysql</h2>
-<p>This is just a simple database backend that authorizes login attempts via mysql.</p>
-<p><strong>Also set up the <a href="/manual/storage/modules/#mysql">Mysql storage</a> module for this to work as intended.</strong></p>
+<h2 id="database">Database</h2>
+<p>This is just a simple database backend that allows you to store your users (and settings etc.).</p>
+<p><strong>Also set up the <a href="/manual/storage/modules/#database">Database Storage</a> module for this to work as intended.</strong></p>
+<h3 id="sqlite">Sqlite</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Install dependencies</span>
+$ npm <span class="token function">install</span> sqlite3 bcryptjs
+
+<span class="token comment" spellcheck="true"># Set up configuration</span>
+$ node osjs config:set --name<span class="token operator">=</span>authenticator --value<span class="token operator">=</span>database
+$ node osjs config:set --name<span class="token operator">=</span>server.modules.auth.database.driver --value<span class="token operator">=</span>sqlite
+
+<span class="token comment" spellcheck="true"># Set up database</span>
+$ <span class="token function">cp</span> src/templates/misc/authstorage.sqlite src/server/
+
+<span class="token comment" spellcheck="true"># Rebuild</span>
+$ node osjs build
+
+<span class="token comment" spellcheck="true"># Now add yourself as a user</span>
+$ node bin/add-user.js add anders admin
+$ <span class="token function">mkdir</span> vfs/home/anders
+</code></pre>
+<h3 id="mysql">Mysql</h3>
 <pre class="language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Install node dependencies</span>
 $ npm <span class="token function">install</span> mysql bcryptjs
 
-<span class="token comment" spellcheck="true"># Or if you use PHP, install Composer, then run:</span>
+<span class="token comment" spellcheck="true"># If you are on PHP 5.5 or below (and you actually use the PHP backend):</span>
 $ <span class="token function">cd</span> src/server/php
 $ composer <span class="token function">install</span>
 
 <span class="token comment" spellcheck="true"># Change the configured authenticator and its options</span>
-$ node osjs config:set --name<span class="token operator">=</span>authenticator --value<span class="token operator">=</span>mysql
-$ node osjs config:set --name<span class="token operator">=</span>server.modules.auth.mysql.host --value<span class="token operator">=</span>localhost
-$ node osjs config:set --name<span class="token operator">=</span>server.modules.auth.mysql.user --value<span class="token operator">=</span>osjsuser
-$ node osjs config:set --name<span class="token operator">=</span>server.modules.auth.mysql.password --value<span class="token operator">=</span>osjspassword
-$ node osjs config:set --name<span class="token operator">=</span>server.modules.auth.mysql.database --value<span class="token operator">=</span>osjs
+$ node osjs config:set --name<span class="token operator">=</span>authenticator --value<span class="token operator">=</span>database
+$ node osjs config:set --name<span class="token operator">=</span>server.modules.auth.database.driver --value<span class="token operator">=</span>mysql
+$ node osjs config:set --name<span class="token operator">=</span>server.modules.auth.database.mysql.host --value<span class="token operator">=</span>localhost
+$ node osjs config:set --name<span class="token operator">=</span>server.modules.auth.database.mysql.user --value<span class="token operator">=</span>osjsuser
+$ node osjs config:set --name<span class="token operator">=</span>server.modules.auth.database.mysql.password --value<span class="token operator">=</span>osjspassword
+$ node osjs config:set --name<span class="token operator">=</span>server.modules.auth.database.mysql.database --value<span class="token operator">=</span>osjs
 
 <span class="token comment" spellcheck="true"># Make OS.js reload after you log out</span>
 $ node osjs config:set --name<span class="token operator">=</span>client.ReloadOnShutdown --value<span class="token operator">=</span>true
@@ -271,27 +291,6 @@ mysql<span class="token operator">&gt;</span> CREATE TABLE IF NOT EXISTS <span c
 <span class="token comment" spellcheck="true"># And then add yourself a user</span>
 $ node bin/add-user.js add anders admin
 $ <span class="token function">mkdir</span> vfs/home/myadminaccount
-</code></pre>
-<hr>
-<h2 id="sqlite">Sqlite</h2>
-<p>This works almost like the Mysql module, except with sqlite.</p>
-<p><em>This is only available for node at this moment.</em></p>
-<p><strong>Also set up the <a href="/manual/storage/modules/#sqlite">Sqlite storage</a> module for this to work as intended.</strong></p>
-<pre class="language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Install dependencies</span>
-$ npm <span class="token function">install</span> sqlite3 bcryptjs
-
-<span class="token comment" spellcheck="true"># Set up configuration</span>
-$ node osjs config:set --name<span class="token operator">=</span>authenticator --value<span class="token operator">=</span>sqlite
-
-<span class="token comment" spellcheck="true"># Set up database</span>
-$ <span class="token function">cp</span> src/templates/misc/authstorage.sqlite src/server/
-
-<span class="token comment" spellcheck="true"># Rebuild</span>
-$ node osjs build
-
-<span class="token comment" spellcheck="true"># Now add yourself as a user</span>
-$ node bin/add-user.js add anders admin
-$ <span class="token function">mkdir</span> vfs/home/anders
 </code></pre>
 <hr>
 <h2 id="pam-and-shadow">PAM and Shadow</h2>

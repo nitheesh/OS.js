@@ -229,23 +229,24 @@
 $ node osjs build:config build:core
 </code></pre>
 <hr>
-<h2 id="mysql">Mysql</h2>
-<p>Stores the data in a Mysql database. See the <a href="/manual/auth">Authenticators</a> documentation on how to set up the database and its users.</p>
-<pre class="language-bash"><code class="language-bash">$ node osjs config:set --name<span class="token operator">=</span>storage --value<span class="token operator">=</span>mysql
-$ node osjs config:set --name<span class="token operator">=</span>server.modules.storage.mysql.host --value<span class="token operator">=</span>localhost
-$ node osjs config:set --name<span class="token operator">=</span>server.modules.storage.mysql.user --value<span class="token operator">=</span>osjsuser
-$ node osjs config:set --name<span class="token operator">=</span>server.modules.storage.mysql.password --value<span class="token operator">=</span>osjspassword
-$ node osjs config:set --name<span class="token operator">=</span>server.modules.storage.mysql.database --value<span class="token operator">=</span>osjs
-$ node osjs build:config build:core
-</code></pre>
-<hr>
-<h2 id="sqlite">Sqlite</h2>
-<p>Stores the data in a Sqlite database. See the <a href="/manual/auth">Authenticators</a> documentation on how to set up the database and its users.</p>
-<pre class="language-bash"><code class="language-bash">$ node osjs config:set --name<span class="token operator">=</span>storage --value<span class="token operator">=</span>sqlite
+<h2 id="database">Database</h2>
+<p>Stores the data in a database. See the <a href="/manual/auth">Authenticators</a> documentation on how to set up the database and its users.</p>
+<h3 id="sqlite">Sqlite</h3>
+<pre class="language-bash"><code class="language-bash">$ node osjs config:set --name<span class="token operator">=</span>storage --value<span class="token operator">=</span>database
+$ node osjs config:set --name<span class="token operator">=</span>server.modules.storage.database.driver --value<span class="token operator">=</span>sqlite
 $ node osjs build:config build:core
 
 <span class="token comment" spellcheck="true"># If you have not done it already</span>
 $ <span class="token function">cp</span> src/templates/misc/authstorage.sqlite src/server/
+</code></pre>
+<h3 id="mysql">Mysql</h3>
+<pre class="language-bash"><code class="language-bash">$ node osjs config:set --name<span class="token operator">=</span>storage --value<span class="token operator">=</span>database
+$ node osjs config:set --name<span class="token operator">=</span>server.modules.storage.database.driver --value<span class="token operator">=</span>mysql
+$ node osjs config:set --name<span class="token operator">=</span>server.modules.storage.database.mysql.host --value<span class="token operator">=</span>localhost
+$ node osjs config:set --name<span class="token operator">=</span>server.modules.storage.database.mysql.user --value<span class="token operator">=</span>osjsuser
+$ node osjs config:set --name<span class="token operator">=</span>server.modules.storage.database.mysql.password --value<span class="token operator">=</span>osjspassword
+$ node osjs config:set --name<span class="token operator">=</span>server.modules.storage.database.mysql.database --value<span class="token operator">=</span>osjs
+$ node osjs build:config build:core
 </code></pre>
 <hr>
 <h2 id="system">System</h2>
