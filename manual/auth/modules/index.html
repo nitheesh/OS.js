@@ -244,7 +244,7 @@ $ <span class="token function">cp</span> src/templates/misc/authstorage.sqlite s
 <span class="token comment" spellcheck="true"># Rebuild</span>
 $ node osjs build
 
-<span class="token comment" spellcheck="true"># Now add yourself as a user</span>
+<span class="token comment" spellcheck="true"># Now add yourself as an admin</span>
 $ node bin/add-user.js add anders admin
 $ <span class="token function">mkdir</span> vfs/home/anders
 </code></pre>
@@ -280,9 +280,9 @@ mysql<span class="token operator">&gt;</span> GRANT ALL PRIVILEGES ON osjs.* TO 
 <span class="token comment" spellcheck="true"># Then set up database tables</span>
 $ mysql -h localhost -u root -p osjs <span class="token operator">&lt;</span> src/templates/misc/authstorage.sql
 
-<span class="token comment" spellcheck="true"># And then add yourself a user</span>
+<span class="token comment" spellcheck="true"># Now add yourself as an admin</span>
 $ node bin/add-user.js add anders admin
-$ <span class="token function">mkdir</span> vfs/home/myadminaccount
+$ <span class="token function">mkdir</span> vfs/home/anders
 </code></pre>
 <hr>
 <h2 id="pam-and-shadow">PAM and Shadow</h2>
