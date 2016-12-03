@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Namespace: utils | OS.js API</title>
+    <title>Namespace: database | OS.js API</title>
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" />
@@ -41,7 +41,7 @@
       </aside>
 
       <content>
-        <h1 class="page-title">Namespace: utils</h1>
+        <h1 class="page-title">Namespace: database</h1>
         
 
 
@@ -50,7 +50,7 @@
 <section>
 
     
-        <h2>utils</h2>
+        <h2>database</h2>
         
     
 
@@ -122,9 +122,9 @@
 
     
 
-    <h4 class="name" id=".iterate">
+    <h4 class="name" id=".destroy">
             
-    <span class="type-signature static">static</span>core.utils.iterate<span class="signature">(list, entry, done)</span>
+    <span class="type-signature static">static</span>core.database.destroy<span class="signature">()</span>
     </h4>
 
     
@@ -132,7 +132,7 @@
 
 
 <div class="description">
-    Iterates array async
+    Destroys all database connections
 </div>
 
 
@@ -141,101 +141,6 @@
 
 
 
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>list</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">List</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>entry</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Callback on entry ( fn => (iter, index, next) )</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>done</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Callback on done</td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -299,9 +204,9 @@
 
     
 
-    <h4 class="name" id=".permissionToString">
+    <h4 class="name" id=".instance">
             
-    <span class="type-signature static">static</span>core.utils.permissionToString<span class="signature">(mode)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{String}</span>
+    <span class="type-signature static">static</span>core.database.instance<span class="signature">(name, <span class="optional">type</span>, <span class="optional">opts</span>)</span>
     </h4>
 
     
@@ -309,7 +214,7 @@
 
 
 <div class="description">
-    Creates a readable string from file permission
+    Creates or fethes a connection
 </div>
 
 
@@ -333,6 +238,8 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -345,23 +252,97 @@
 
         <tr>
             
-                <td class="name"><code>mode</code></td>
+                <td class="name"><code>name</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">String</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">The permission mode</td>
+            <td class="description last">Connection Name</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Connection Type</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Mixed</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Connection Options</td>
         </tr>
 
     
@@ -420,24 +401,6 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">String</span>
-
-
-    </dd>
-</dl>
-
-    
 
 
 

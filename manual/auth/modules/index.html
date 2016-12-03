@@ -269,8 +269,29 @@ mysql<span class="token operator">&gt;</span> CREATE TABLE IF NOT EXISTS <span c
 <span class="token punctuation">)</span> ENGINE<span class="token operator">=</span>MyISAM  DEFAULT CHARSET<span class="token operator">=</span>latin1 AUTO_INCREMENT<span class="token operator">=</span>1<span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true"># And then add yourself a user</span>
-$ node bin/mysql-user.js add anders admin
+$ node bin/add-user.js add anders admin
 $ <span class="token function">mkdir</span> vfs/home/myadminaccount
+</code></pre>
+<hr>
+<h1 id="sqlite">Sqlite</h1>
+<p>This works almost like the Mysql module, except with sqlite.</p>
+<p><em>This is only available for node at this moment.</em></p>
+<p><strong>Also set up the <a href="/manual/storage/modules/#sqlite">Sqlite storage</a> module for this to work as intended.</strong></p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Install dependencies</span>
+$ npm <span class="token function">install</span> sqlite3 bcryptjs
+
+<span class="token comment" spellcheck="true"># Set up configuration</span>
+$ node osjs config:set --name<span class="token operator">=</span>authenticator --value<span class="token operator">=</span>sqlite
+
+<span class="token comment" spellcheck="true"># Set up database</span>
+$ <span class="token function">cp</span> src/templates/misc/authstorage.sqlite src/server/
+
+<span class="token comment" spellcheck="true"># Rebuild</span>
+$ node osjs build
+
+<span class="token comment" spellcheck="true"># Now add yourself as a user</span>
+$ node bin/add-user.js add anders admin
+$ <span class="token function">mkdir</span> vfs/home/anders
 </code></pre>
 <hr>
 <h2 id="pam-and-shadow">PAM and Shadow</h2>
