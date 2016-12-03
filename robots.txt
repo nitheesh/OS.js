@@ -173,6 +173,7 @@ Disallow: /doc/client/srcclientjavascriptvfsmountslocalstoragejs.html
 Disallow: /doc/client/srcclientjavascriptvfsmountsdropboxjs.html
 Disallow: /doc/client/srcclientjavascripthelpersiframe-applicationjs.html
 Disallow: /doc/client/srcjavascriptvfsjs.html
+Disallow: /doc/client/OSjs.Helpers.FirefoxMarketplace.html
 Disallow: /doc/client/OSjs.Dialogs.html
 Disallow: /doc/client/OSjs.Handlers.html
 Disallow: /doc/manuals/index.html
