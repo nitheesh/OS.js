@@ -237,15 +237,11 @@ $ node osjs config:set --name<span class="token operator">=</span>server.modules
 $ node osjs config:set --name<span class="token operator">=</span>server.modules.storage.mysql.password --value<span class="token operator">=</span>osjspassword
 $ node osjs config:set --name<span class="token operator">=</span>server.modules.storage.mysql.database --value<span class="token operator">=</span>osjs
 $ node osjs build:config build:core
-
----
-
-<span class="token comment" spellcheck="true">## Sqlite</span>
-
-Stores the data <span class="token keyword">in</span> a Sqlite database. See the <span class="token punctuation">[</span>Authenticators<span class="token punctuation">]</span><span class="token punctuation">(</span>/manual/auth<span class="token punctuation">)</span> documentation on how to <span class="token keyword">set</span> up the database and its users.
-
-```bash
-$ node osjs config:set --name<span class="token operator">=</span>storage --value<span class="token operator">=</span>sqlite
+</code></pre>
+<hr>
+<h2 id="sqlite">Sqlite</h2>
+<p>Stores the data in a Sqlite database. See the <a href="/manual/auth">Authenticators</a> documentation on how to set up the database and its users.</p>
+<pre class="language-bash"><code class="language-bash">$ node osjs config:set --name<span class="token operator">=</span>storage --value<span class="token operator">=</span>sqlite
 $ node osjs build:config build:core
 
 <span class="token comment" spellcheck="true"># If you have not done it already</span>
