@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Application - Misc | OS.js Manual</title>
+    <title>Server Middleware | OS.js Manual</title>
     <meta name="description" content="OS.js Manual - OS.js" />
     <meta name="keywords" content="OS.js,Documentation,Client,Server,API,Tutorial,Tutorials,Manual,Manuals" />
 
@@ -26,7 +26,7 @@
       }
     </script>
   </head>
-  <body class="manual_package_application_misc">
+  <body class="manual_server_middleware">
     <header>
       <div id="Logo"></div>
       <nav>
@@ -222,26 +222,14 @@
       </aside>
 
       <content>
-        <h1 id="application-misc">Application - Misc</h1>
-<h2 id="handling-launch-arguments">Handling launch arguments</h2>
-<p>When you launch an Application it normally recieves arguments based on how it was opened. Most included Applications with file interactions have a <code>file</code> argument to open a file (etc).</p>
-<p>These are stored in your session, so you can set these and make your Application restore to the file the user was last using.</p>
-<pre class="language-js"><code class="language-js"><span class="token punctuation">.</span><span class="token function">_getArgument</span><span class="token punctuation">(</span><span class="token string">&apos;key&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token punctuation">.</span><span class="token function">_setArgument</span><span class="token punctuation">(</span><span class="token string">&apos;key&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;value&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h2 id="handling-settings">Handling settings</h2>
-<p>You can also store settings in your application. These are stored across all instances, but not a part of the session data.</p>
-<pre class="language-js"><code class="language-js"><span class="token punctuation">.</span><span class="token function">_setSetting</span><span class="token punctuation">(</span><span class="token string">&apos;key&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;value&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// As key/value</span>
-
-<span class="token punctuation">.</span><span class="token function">_setSetting</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// As tree</span>
-  key<span class="token punctuation">:</span> <span class="token string">&apos;value&apos;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token punctuation">.</span><span class="token function">_getSetting</span><span class="token punctuation">(</span><span class="token string">&apos;key&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// By key</span>
-
-<span class="token punctuation">.</span><span class="token function">_getSetting</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Everything</span>
-</code></pre>
+        <h1 id="server-middleware">Server Middleware</h1>
+<p>You can hook into HTTP request flow with the provided <em>Middleware</em> interface.</p>
+<p>This will allow you to add your own &quot;routes&quot; and provide custom content on a spesific URL.</p>
+<p>Note that these are called last in the queue, after any API, VFS and static resource requests.</p>
+<h2 id="node">Node</h2>
+<p>Look at the <a href="https://github.com/os-js/OS.js/blob/master/src/server/node/modules/middleware/example.js">provided example</a> for more information.</p>
+<h2 id="php">PHP</h2>
+<p>Look at the <a href="https://github.com/os-js/OS.js/blob/master/src/server/php/Modules/Middleware/Example.php">provided example</a> for more information.</p>
 
 
         <footer>
