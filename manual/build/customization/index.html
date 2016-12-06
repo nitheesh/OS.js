@@ -237,7 +237,13 @@ $ node osjs build
 <p>The actual interaction code is in the <em>Authenticator</em>.</p>
 <pre class="language-bash"><code class="language-bash">$ <span class="token function">cp</span> -r src/templates/dist/login/default.html src/templates/dist/login/mytemplate.html
 $ node osjs config:set --name<span class="token operator">=</span>build.dist.layout --value<span class="token operator">=</span>mytemplate
-$ node osjs build
+$ node osjs build:core
+</code></pre>
+<h2 id="splash-screen">Splash Screen</h2>
+<p>To customize the login screen markup, just make a copy of the default and make any adjustments you want.</p>
+<pre class="language-bash"><code class="language-bash">$ <span class="token function">cp</span> -r src/templates/dist/splash/default.html src/templates/dist/splash/mytemplate.html
+$ node osjs config:set --name<span class="token operator">=</span>build.dist.layout --value<span class="token operator">=</span>mytemplate
+$ node osjs build:core
 </code></pre>
 
 
