@@ -1689,7 +1689,7 @@ response directly.
 
     <h4 class="name" id=".resolvePathArguments">
             
-    <span class="type-signature static">static</span>core.vfs.resolvePathArguments<span class="signature">(path, options)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{String}</span>
+    <span class="type-signature static">static</span>core.vfs.resolvePathArguments<span class="signature">(callback)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{String}</span>
     </h4>
 
     
@@ -1733,13 +1733,13 @@ response directly.
 
         <tr>
             
-                <td class="name"><code>path</code></td>
+                <td class="name"><code>callback</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type">function</span>
 
 
             
@@ -1749,30 +1749,7 @@ response directly.
 
             
 
-            <td class="description last">The query path</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Object that maps the arguments and values</td>
+            <td class="description last">Callback function</td>
         </tr>
 
     

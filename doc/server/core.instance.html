@@ -124,7 +124,7 @@
 
     <h4 class="name" id=".destroy">
             
-    <span class="type-signature static">static</span>core.instance.destroy<span class="signature">(http)</span>
+    <span class="type-signature static">static</span>core.instance.destroy<span class="signature">(<span class="optional">cb</span>)</span>
     </h4>
 
     
@@ -156,6 +156,8 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -168,23 +170,33 @@
 
         <tr>
             
-                <td class="name"><code>http</code></td>
+                <td class="name"><code>cb</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#ServerRequest">ServerRequest</a></span>
+<span class="param-type">function</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">OS.js Server Request</td>
+            <td class="description last">Callback</td>
         </tr>
 
     
@@ -683,7 +695,7 @@
 
     <h4 class="name" id=".getMetadata">
             
-    <span class="type-signature static">static</span>core.instance.getMetadata<span class="signature">()</span>
+    <span class="type-signature static">static</span>core.instance.getMetadata<span class="signature">(packageName)</span>
     </h4>
 
     
@@ -700,6 +712,55 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>packageName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Package Name ("DISTO/PACKAGE")</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -1142,7 +1203,7 @@
 
     <h4 class="name" id=".run">
             
-    <span class="type-signature static">static</span>core.instance.run<span class="signature">()</span>
+    <span class="type-signature static">static</span>core.instance.run<span class="signature">(<span class="optional">port</span>)</span>
     </h4>
 
     
@@ -1159,6 +1220,67 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>port</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Port number to start on</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
