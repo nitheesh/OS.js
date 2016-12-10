@@ -233,22 +233,7 @@ $ node osjs config:add-mount --name<span class="token operator">=</span>data --d
 <span class="token comment" spellcheck="true"># Update configuration</span>
 $ node osjs build:config
 </code></pre>
-<p>This will create the mountpoint <code>data://</code> and points to <code>/tmp</code> on the server. For group permissions, see <a href="/manual/auth/permission">here</a>.</p>
-<p>You can set it to read-only by using:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">&quot;server&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">&quot;vfs&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">&quot;mounts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-          <span class="token property">&quot;ro&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-          <span class="token property">&quot;destination&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/tmp&quot;</span>
-        <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p><em>Better CLI configuration support coming soon</em></p>
+<p>This will create the mountpoint <code>data://</code> and points to <code>/tmp</code> on the server. For group permissions, see <a href="/manual/auth/permission">here</a>. If you want the mountpoint to be read-only, simply add the <code>-ro</code> flag to the config command.</p>
 
 
         <footer>
