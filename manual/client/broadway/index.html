@@ -225,18 +225,25 @@
         <h1 id="broadway">Broadway</h1>
 <p>With Broadway you can run native GTK+ 3.x Linux applications in OS.js via WebSockets.</p>
 <p>This is <a href="https://github.com/os-js/OS.js/issues/29">not ready</a> for production usage.</p>
+<p>Requires running latest GTK+ 3 with Broadway 2.0+.</p>
 <h2 id="enable">Enable</h2>
-<pre class="language-bash"><code class="language-bash">$ node osjs config:enable-package --name<span class="token operator">=</span>Broadway
-$ node osjs build:config build:manifest build:core
+<pre class="language-bash"><code class="language-bash">$ node osjs config:set --name<span class="token operator">=</span>broadway.enabled --value<span class="token operator">=</span>true
+$ node osjs build
 </code></pre>
+<p>To see all configuration options, do <code>node osjs config:get --name=broadway</code></p>
+<p>This will make Broadway OS.js server start automatically with the server.</p>
 <h2 id="set-up-x-server">Set up X server</h2>
-<pre class="language-bash"><code class="language-bash">$ <span class="token function">cd</span> Broadway/vendor/
-$ npm <span class="token function">install</span>
-$ xhost +
-$ ./broadway-server.sh
+<p>Now you have to launch broadway on your X-server.</p>
+<pre class="language-bash"><code class="language-bash">$ xhost +
+$ broadwayd --address 0.0.0.0 :5
 </code></pre>
-<h1 id="usage">Usage</h1>
+<h2 id="usage">Usage</h2>
 <p>You can connect to your server from the icon in the Panel.</p>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>For some reason connection is failing on latest <em>Arch Linux</em>. Ubuntu 16 is working fine, however.</li>
+<li>Since the release of &quot;Client Side Decorations&quot; in GTK, the borders are rendered inside the OS.js windows, which makes it look kind of weird, but works perfectly fine.</li>
+</ul>
 
 
         <footer>
