@@ -24,9 +24,9 @@
 <url> <loc>https://os.js.org/manual/connection/http/</loc> </url>
 <url> <loc>https://os.js.org/manual/connection/websocket/</loc> </url>
 <url> <loc>https://os.js.org/manual/installation/</loc> </url>
+<url> <loc>https://os.js.org/manual/installation/nix/</loc> </url>
 <url> <loc>https://os.js.org/manual/installation/other/</loc> </url>
 <url> <loc>https://os.js.org/manual/installation/windows/</loc> </url>
-<url> <loc>https://os.js.org/manual/installation/nix/</loc> </url>
 <url> <loc>https://os.js.org/manual/server/</loc> </url>
 <url> <loc>https://os.js.org/manual/server/middleware/</loc> </url>
 <url> <loc>https://os.js.org/manual/server/node/</loc> </url>
@@ -35,8 +35,8 @@
 <url> <loc>https://os.js.org/manual/storage/example/</loc> </url>
 <url> <loc>https://os.js.org/manual/storage/modules/</loc> </url>
 <url> <loc>https://os.js.org/manual/vfs/</loc> </url>
-<url> <loc>https://os.js.org/manual/vfs/example/</loc> </url>
 <url> <loc>https://os.js.org/manual/vfs/transport/</loc> </url>
+<url> <loc>https://os.js.org/manual/vfs/example/</loc> </url>
 <url> <loc>https://os.js.org/manual/api/</loc> </url>
 <url> <loc>https://os.js.org/manual/api/client/</loc> </url>
 <url> <loc>https://os.js.org/manual/api/server/</loc> </url>
