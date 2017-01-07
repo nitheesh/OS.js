@@ -35,8 +35,8 @@
 <url> <loc>https://os.js.org/manual/storage/example/</loc> </url>
 <url> <loc>https://os.js.org/manual/storage/modules/</loc> </url>
 <url> <loc>https://os.js.org/manual/vfs/</loc> </url>
-<url> <loc>https://os.js.org/manual/vfs/transport/</loc> </url>
 <url> <loc>https://os.js.org/manual/vfs/example/</loc> </url>
+<url> <loc>https://os.js.org/manual/vfs/transport/</loc> </url>
 <url> <loc>https://os.js.org/manual/api/</loc> </url>
 <url> <loc>https://os.js.org/manual/api/client/</loc> </url>
 <url> <loc>https://os.js.org/manual/api/server/</loc> </url>
@@ -51,8 +51,8 @@
 <url> <loc>https://os.js.org/manual/package/iframe/</loc> </url>
 <url> <loc>https://os.js.org/manual/package/service/</loc> </url>
 <url> <loc>https://os.js.org/manual/package/application/</loc> </url>
-<url> <loc>https://os.js.org/manual/package/application/events/</loc> </url>
 <url> <loc>https://os.js.org/manual/package/application/gui/</loc> </url>
+<url> <loc>https://os.js.org/manual/package/application/events/</loc> </url>
 <url> <loc>https://os.js.org/manual/package/application/misc/</loc> </url>
 <url> <loc>https://os.js.org/manual/package/application/responsive/</loc> </url>
 <url> <loc>https://os.js.org/manual/package/application/windows/</loc> </url>
