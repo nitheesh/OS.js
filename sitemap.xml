@@ -26,6 +26,7 @@
 <url> <loc>https://os.js.org/manual/installation/</loc> </url>
 <url> <loc>https://os.js.org/manual/installation/nix/</loc> </url>
 <url> <loc>https://os.js.org/manual/installation/other/</loc> </url>
+<url> <loc>https://os.js.org/manual/installation/upgrade/</loc> </url>
 <url> <loc>https://os.js.org/manual/installation/windows/</loc> </url>
 <url> <loc>https://os.js.org/manual/server/</loc> </url>
 <url> <loc>https://os.js.org/manual/server/middleware/</loc> </url>
@@ -51,8 +52,8 @@
 <url> <loc>https://os.js.org/manual/package/iframe/</loc> </url>
 <url> <loc>https://os.js.org/manual/package/service/</loc> </url>
 <url> <loc>https://os.js.org/manual/package/application/</loc> </url>
-<url> <loc>https://os.js.org/manual/package/application/gui/</loc> </url>
 <url> <loc>https://os.js.org/manual/package/application/events/</loc> </url>
+<url> <loc>https://os.js.org/manual/package/application/gui/</loc> </url>
 <url> <loc>https://os.js.org/manual/package/application/misc/</loc> </url>
 <url> <loc>https://os.js.org/manual/package/application/responsive/</loc> </url>
 <url> <loc>https://os.js.org/manual/package/application/windows/</loc> </url>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Authentication | OS.js Manual</title>
+    <title>Upgrade | OS.js Manual</title>
     <meta name="description" content="OS.js Manual - OS.js" />
     <meta name="keywords" content="OS.js,Documentation,Client,Server,API,Tutorial,Tutorials,Manual,Manuals" />
 
@@ -26,7 +26,7 @@
       }
     </script>
   </head>
-  <body class="manual_auth">
+  <body class="manual_installation_upgrade">
     <header>
       <div id="Logo"></div>
       <nav>
@@ -223,12 +223,20 @@
       </aside>
 
       <content>
-        <h1 id="authentication">Authentication</h1>
-<p>Authentication is done in modules known as <em>Authenticators</em>. By default the &quot;demo module&quot; is used, which has no authentication (and neither a login form).</p>
-<ul>
-<li><a href="/manual/auth/modules">Modules</a></li>
-<li><a href="/manual/auth/permission">Permissions and Groups</a></li>
-</ul>
+        <h1 id="upgrade-os-js">Upgrade OS.js</h1>
+<p>The best way to keep an up-to-date version of OS.js is to install it via <code>git</code>. This of course requires a bit of knowledge on how to use this utility, but there&apos;s only a few key commands needed.</p>
+<p>Remember to restart your server(s) after rebuilding changes.</p>
+<p><em>NOTE:</em> None of your configurations or packages are modified during this process. These are always stored in files outside the codebase.</p>
+<p><em>NOTE:</em> You can use the same procedure to update your package repositories.</p>
+<h2 id="with-git">With git</h2>
+<p>You simply have to pull the changes and rebuild:</p>
+<pre class="language-bash"><code class="language-bash">$ <span class="token function">git</span> pull
+$ node osjs build
+</code></pre>
+<h2 id="other">Other</h2>
+<p>If you downloaded a zip-file or some other archive, you can simply extract the file into your OS.js installation, then:</p>
+<pre class="language-bash"><code class="language-bash">$ node osjs build
+</code></pre>
 
 
         <footer>

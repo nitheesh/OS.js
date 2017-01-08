@@ -54,6 +54,7 @@
                 <li><a href="/manual/installation/nix">NIX</a></li>
                 <li><a href="/manual/installation/windows">Windows</a></li>
                 <li><a href="/manual/installation/other">Other</a></li>
+                <li><a href="/manual/installation/upgrade">Upgrade</a></li>
               </ul>
             </li>
 
@@ -230,19 +231,19 @@
 <li>Git (recommended)</li>
 </ul>
 <hr>
-<h2 id="automated">Automated</h2>
-<p>Download and run the installer in your shell:</p>
-<pre class="language-bash"><code class="language-bash">$ curl -sS https://os.js.org/installer <span class="token operator">|</span> sh
-</code></pre>
-<hr>
-<h2 id="manual">Manual</h2>
-<p>Or manually (recommended):</p>
+<h2 id="manual-recommended-">Manual (recommended)</h2>
+<p>To install manually, simply run these commands:</p>
 <pre class="language-bash"><code class="language-bash">$ <span class="token function">git</span> clone https://github.com/os-js/OS.js.git
 $ <span class="token function">cd</span> OS.js
 $ npm <span class="token function">install</span> --production
 $ node osjs build
 </code></pre>
 <p>You can download and extract a zip-file instead of using <code>git</code>, but is not recommended as it makes the update process harder.</p>
+<hr>
+<h2 id="automated">Automated</h2>
+<p>Download and run the installer in your shell:</p>
+<pre class="language-bash"><code class="language-bash">$ curl -sS https://os.js.org/installer <span class="token operator">|</span> sh
+</code></pre>
 <hr>
 <h2 id="running">Running</h2>
 <p>When you have <a href="/manual/server">started a server</a>, simply navigate to <a href="http://localhost:8000">http://localhost:8000</a> (port 8000 is default).</p>
