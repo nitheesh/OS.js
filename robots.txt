@@ -88,6 +88,7 @@ Disallow: /doc/client/srcclientjavascriptvfswebdavjs.html
 Disallow: /doc/client/srcclientjavascriptdialogsinputjs.html
 Disallow: /doc/client/srcclientjavascriptvfsinternaljs.html
 Disallow: /doc/client/srcjavascripthelpersdate.html
+Disallow: /doc/client/srcjavascriptapijs.html
 Disallow: /doc/client/srcclientjavascriptapijs.html
 Disallow: /doc/client/srcclientjavascriptgui_schemejs.html
 Disallow: /doc/client/srcjavascripthelperswindows-live-apijs.html
@@ -179,6 +180,7 @@ Disallow: /doc/client/srcclientjavascriptvfsmountsdropboxjs.html
 Disallow: /doc/client/srcclientjavascripthelpersiframe-applicationjs.html
 Disallow: /doc/client/srcjavascriptvfsjs.html
 Disallow: /doc/client/OSjs.Authenticator.html
+Disallow: /doc/client/OSjs.Core.Handler.html
 Disallow: /doc/client/OSjs.Core.HandlerConnection.html
 Disallow: /doc/client/OSjs.Helpers.FirefoxMarketplace.Class.html
 Disallow: /doc/client/OSjs.Helpers.FirefoxMarketplace.html
